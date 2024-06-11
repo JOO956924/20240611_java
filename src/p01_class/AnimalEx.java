@@ -11,9 +11,9 @@ public class AnimalEx {
   }
 
   //메인 메서드는 JVM으로 실행됨
-  //메인 메서드는 static 요소(확실하게 정의됨)가 있어야 실행되기전에 메서드 에리어로 호출되며 JVM으로 실행됨
+  //메인 메서드는 static 변수(확실하게 정의됨)가 있어야 실행되기전에 메서드 에리어로 호출되며 JVM으로 실행됨
   //메인 메서드는 인스턴스가 없어도 실행가능?
-  //메인 메서드가 아닌 메서드의 변수가 메인 메서드에서 실행되려면 static 요소를 붙여야함
+  //메인 메서드가 아닌 메서드의 변수가 메인 메서드에서 실행되려면 static 변수를 붙여야함
   public static void main (String[] args) {
     Animal a1 = new Animal();
 
