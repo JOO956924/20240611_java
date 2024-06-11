@@ -9,9 +9,12 @@ package p01_class;
 4) 클래스를 사용하려면 인스턴스를 만들어야 한다.
 5) 클래스는 new(생성연산자)를 통해 인스턴스를 생성할 수 있다.
 */
+
 public class Animal {
-  int legs;
-  void run() {
+  public int legs;
+  string color;
+
+  public void run() {
     System.out.println(legs);
   }
 }

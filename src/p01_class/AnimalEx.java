@@ -1,6 +1,7 @@
 package p01_class;
 
-public class MainAnother {
+
+public class AnimalEx {
   /*JVM(가상프로그램)*/
   // 값이 없으면 자동으로 int=0이 할당됨
   public static void main(String[] args) {
