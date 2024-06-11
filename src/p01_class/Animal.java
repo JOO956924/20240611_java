@@ -18,3 +18,4 @@ public class Animal {
     System.out.println(legs);
   }
 }
+

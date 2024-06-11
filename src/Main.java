@@ -1,19 +1,21 @@
-// class
+import p01_class.Animal;// class
 public class Main {
-  // 멤버 변수
-  int num1 = 10;
-  int num2 = 30;
-  int num3 = num1 + num2;
-
-  // 클래스없이 멤버변수 x
-  void done() {
-    System.out.println(num3);
-    if (num1 < num2) {
-      num3 = num1;
-    } else {
-      num3 = num2;
-    }
+  /*JVM(가상프로그램)*/
+// 값이 없으면 자동으로 int=0이 할당됨
+  public static void main(String[] args) {
+    /*Main main = new Main();
+    main.done();*/
+    Animal animal = new Animal();
+    animal.legs = 2;
+    Animal animal2 = new Animal();
+    animal2.legs = 4;
+    System.out.println(animal.legs);
+    System.out.println(animal2.legs);
+    /*클래스
+        멤버변수
+        메소드*/
+    //인스턴스 = 복제본//
+    //
   }
 }
-
 
