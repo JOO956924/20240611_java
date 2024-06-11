@@ -1,4 +1,6 @@
 import p01_class.Animal;// class
+import p01_class.AnimalEx;
+
 public class Main {
   /*JVM(가상프로그램)*/
 // 값이 없으면 자동으로 int=0이 할당됨

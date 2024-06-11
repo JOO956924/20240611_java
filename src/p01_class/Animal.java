@@ -12,7 +12,7 @@ package p01_class;
 
 public class Animal {
   public int legs;
-  string color;
+  String color;
 
   public void run() {
     System.out.println(legs);
