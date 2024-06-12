@@ -9,7 +9,17 @@ package p01_class;
 4) 클래스를 사용하려면 인스턴스를 만들어야 한다.
 5) 클래스는 new(생성연산자)를 통해 인스턴스를 생성할 수 있다.
 */
-
+/*
+명명규칙
+1)영문 대소 문자와 한글을 사용할 수 있다.
+- abc(O),ABC(O),aBc(O),가나다(O)
+2)특수 문자는 밑줄(_)과 달러($)표기만 사용이 가능하다.
+- $abc(O),_abc(O),ab_c(O),$abc_(O)
+3)아라비아 숫자를 사용할 수 있다. 단, 첫 번째 글자로는 사용할 수 없다.
+- a3bc(O),ab3c(O),abc3(O),3abc(X)
+4)자바에서 사용하는 예약어는 사용할 수 없다.
+- int(X),break(X),public(X),static(X) 등등
+*/
 public class Animal {
   public int legs;
   String color;
@@ -18,4 +28,9 @@ public class Animal {
     System.out.println(legs);
   }
 }
+// 하나의 파일에 main메서드 복수개 가능
+class Foo {
+  public static void main(String[] args) {
 
+  }
+}
