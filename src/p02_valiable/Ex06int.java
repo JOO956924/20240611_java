@@ -13,14 +13,18 @@ public class Ex06int {
     byte b4 = (byte) (b1 + b3);
     Utils.typeOf(b4);
     System.out.println(b4);
-    // boolean 을 제외한 4byte 이하 자료형은 int로 변환후 연산
+    // 1. boolean 을 제외한 4byte 이하 자료형은 int로 변환후 연산
     short s1 = 1000;
     short s2 = 1000;
-    short s3 = (short) (s1 + s2) ;// 명시적 형변환
+    // 2. 표현 범위가 큰것이 작은 것으로 올 때는 명시적 형변환
+    short s3 = (short) (s1 + s2) ;//short = int
     System.out.println(s3);
     int i1 = s1 + s2;
     System.out.println(i1);
-    long l2 = 200; // long = int , long l2 = (long) 200; 묵시적 형변환
     long l1 = 200L; // long = long
+    // 3. 표현 범위가 작은것이 큰것으로 올 때는 묵시적 형변환
+    long l2 = 200; // long = int , long l2 = (long) 200; 묵시적 형변환
+
+    int i2 = (int) l2; //큰 범위가 작은 범위로 올때는 명시적 형변환
   }
 }
