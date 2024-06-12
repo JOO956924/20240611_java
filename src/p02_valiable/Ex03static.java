@@ -1,6 +1,6 @@
 package p02_valiable;
 
-public class Ex03Static {
+public class Ex03static {
   //static은 main()가 실행되기전 jvm이 메서드에리어에 로드됨.
   {
     System.out.println("인스턴스가 실행됩니다.");
@@ -25,8 +25,8 @@ public class Ex03Static {
     // static = 공통된값을 가진다
     // 인스턴스 = 각각의 값을 가진다
 
-    Ex03Static e1 = new Ex03Static();
-    Ex03Static e2 = new Ex03Static();
+    Ex03static e1 = new Ex03static();
+    Ex03static e2 = new Ex03static();
     e1.vi = 10;
     System.out.println(e1.vi);
     e2.vi = 20;
