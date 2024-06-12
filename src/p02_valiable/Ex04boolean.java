@@ -3,10 +3,30 @@ package p02_valiable;
 public class Ex04boolean {
   public static void main(String[] args) {
     Tv tv = new Tv();
-    /*tv.power = true;*/
+    
+    tv.power = true;
     System.out.println(tv.power);
     tv.power();
     tv.power();
+
+
+    tv.channelUp();
+    tv.channelUp();
+    tv.channelUp();
+    tv.channelUp();
+    tv.channelUp();
+    tv.channelUp();
+    tv.channelDown();
+    tv.channelDown();
+    tv.channelDown();
+    tv.channelDown();
+
+    System.out.println("=============================");
+    tv.volumup();
+    tv.volumup();
+    tv.volumup();
+    tv.volumdown();
+    tv.volumdown();
 
   }
 
@@ -15,7 +35,7 @@ public class Ex04boolean {
 class Tv {
   boolean power;
   
-  int ch = 0;
+  int ch ;
 
   int vl;
 
@@ -38,11 +58,26 @@ class Tv {
     System.out.println(power ? "전원 on" : "전원 off");
   }
   void channelUp() {
-    System.out.println(ch++);
+    if (power) {
+      System.out.println(++ch);
+    }
+    /*ch++;
+    ch = ch+1;
+    ch += 1;*/
   }
 
   void channelDown() {
-    System.out.println(ch--);
+    if (power) {
+      System.out.println(--ch);
+    }
   }
-
+  void ch(int ch) {
+    this.ch = ch;
+  }
+  void volumup() {
+    System.out.println(vl++);
+  }
+  void volumdown() {
+    System.out.println(vl--);
+  }
 }
