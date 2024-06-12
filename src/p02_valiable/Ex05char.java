@@ -26,6 +26,22 @@ public class Ex05char {
     if (ex05char.chr == '\u0000'){
       System.out.println("공백이 같습니다.");
     }
+    char c4 = '\'';
+    char c5 = '\"';
+    char c6 = '\\';
+    char c7 = '\b'; //백스페이스
+    char c8 = '\t'; //tab
+    char c9 = '\n'; //개행
+    char c10 = '\r';//캐리지 리턴
+    char c11 = '\f';//폼피드
+    System.out.println(c4);
+    System.out.println(c5);
+    System.out.println(c6);
+    System.out.println(c7);
+    System.out.println(c8);
+    System.out.println(c9);
+    System.out.println(c10);
+    System.out.println(c11);
 
   }
 }
