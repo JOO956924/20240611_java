@@ -60,6 +60,7 @@ public class Ex01declare {
     System.out.println(MyMath.divied(10,3));
     System.out.println(MyMath.share(10,3));
     System.out.println(MyMath.remain(10,3));
+    System.out.println(Math.max(1,3));
     MyMath.shareRemain(10,3);
 
 
@@ -68,6 +69,10 @@ public class Ex01declare {
 }
 
 class MyMath {
+  // 메서드가 가지는 성격
+  // 1) 객체의 속성(상태)를 처리하는 기능
+  // 2) 객체의 속성(상태)를 온전(보호) 하게 하는 기능
+
   static double add(int n1, int n2) {
     //return  (double) (n1+n2);
     return  n1 + n2 + 0.0;
