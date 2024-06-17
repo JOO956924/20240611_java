@@ -22,6 +22,7 @@ public class Ex03static {
   }
 
   public static void main(String[] args) {
+    // 초기화되는 시점이 다르다
     // static = 공통된값을 가진다
     // 인스턴스 = 각각의 값을 가진다
 
