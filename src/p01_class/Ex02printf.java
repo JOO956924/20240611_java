@@ -2,9 +2,10 @@ package p01_class;
 
 public class Ex02printf {
   public static void main(String[] args) {
-    System.out.print("새파랗게 젊다는게 한 밑천인데");
-    System.out.println("\n");
-    System.out.print("흐린날에 날이 새면 해가 뜨지 \t 않 더 냐");
+    System.out.println(7+7+"7"+7+7);
+    System.out.print("새파랗게 젊다는게 한 밑천인데 째째하게 굴지말고 가슴을 쫙 펴라\n");
+    System.out.println("내일은 해가 뜬다 내일은 해가 뜬다 내일은 해가 뜬다 내일은 해가 뜬다\n");
+    System.out.print("흐린 날도 날이 새면 해가 뜨지 \t 않 더 냐");
     System.out.println();
     System.out.print("사노라면 언젠가는 밝은 날도 오겠지");
     System.out.printf("2 * %d = %d %n", 1, 2);

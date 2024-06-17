@@ -60,6 +60,7 @@ public class Ex01declare {
     System.out.println(MyMath.divied(10,3));
     System.out.println(MyMath.share(10,3));
     System.out.println(MyMath.remain(10,3));
+    MyMath.shareRemain(10,3);
 
 
   }
@@ -96,7 +97,10 @@ class MyMath {
   }
   public static void shareRemain(int n1, int n2) {
 
-    System.out.println("몫:" + share(n1,n2)+"나머지:" + remain(n1,n2));
+    //System.out.println("몫:" + share(n1,n2)+"나머지:" + remain(n1,n2));
+    System.out.printf("몫: %d 나머지: %d",share(n1,n2),remain(n1,n2));
+    System.out.println();
+    System.out.println(String.format("몫: %d 나머지: %d",share(n1,n2),remain(n1,n2)));
 
   }
 }
