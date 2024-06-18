@@ -28,6 +28,7 @@ public class Ex01declare {
   }
 
   //오버로딩
+  //이름이같다,리턴타입 x,매개변수의 타입과순서가 달라야한다.
   boolean print() {
     boolean result = false;
     return result;
