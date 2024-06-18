@@ -2,7 +2,7 @@ package p03_method;
 
 import java.util.Scanner;
 
-public class Ex07condition {
+public class Ex07if {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     System.out.print("숫자 입력:");
