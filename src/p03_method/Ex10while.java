@@ -44,6 +44,10 @@ public class Ex10while {
           }
         }
       }
+
+      do {
+
+      } while (true);
     }
   }
 }
