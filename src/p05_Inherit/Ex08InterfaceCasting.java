@@ -9,6 +9,7 @@ public class Ex08InterfaceCasting {
 
     Flyable[] flyables = {new Bat(), new Eagle(), new Parrot()};
     IGround[] iGrounds = {new Dog(), new Cat(), new Chicken()};
+
     Object obj = 10;
     Utils.typeOf(obj);
     Boolean b = false;
