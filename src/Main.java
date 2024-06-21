@@ -15,8 +15,9 @@ public class Main {
     System.out.println(animal2.legs);
     /*클래스
         멤버변수
-          변수
-        메소드
+          기본형
+          참조형
+  리턴타입 메소드 (매개 변수)
           변수
      */
     //인스턴스 = 복제본//

@@ -8,16 +8,20 @@ public class Ex03extends {
     System.out.println(medic);
   }
 }
-
+// 추상(abstract)클래스는 스스로 인스턴스 생성 불가
+// 상속받은 후 인스턴스 생성
 abstract class Unit {
-  public Unit(String tribe, int hp) {
+  public Unit(String tribe, String name, int hp) {
     super();
     this.tribe = tribe;
+    this.name = name;
     this.hp = hp;
   }
 
-  int hp;
+
   String tribe;
+  String name;
+  int hp;
 
   public void move(int x, int y) {
   }
@@ -27,24 +31,31 @@ abstract class Unit {
 
   @Override
   public String toString() {
-    return String.format("Unit{hp=%d, tribe=%s}",hp,tribe);
+    return String.format("%s{hp=%d,tribe=%s}", name, hp, tribe);
+  }
+}
+
+abstract class Protoss extends Unit {
+  // 상속할 경우에는 Member변수와 method만 상속 // 생성자는 상속안됨
+  public Protoss(String name, int hp) {
+    super("Protoss", name, hp);
   }
 }
 
 abstract class Terren extends Unit {
-  // 상속할 경우에는 Member변수와 method만 상속 // 생성자는 상속안됨
-  public Terren(int hp) {
-    super("Terran",hp);
+  public Terren(String name, int hp) {
+    super("Terran", name, hp);
   }
 }
 
 class Marine extends Terren {
   public Marine() {
-    super(60);
+    super("Marine", 60);
   }
 }
+
 class Medic extends Terren {
   public Medic() {
-    super(45);
+    super("Medic", 45);
   }
 }
