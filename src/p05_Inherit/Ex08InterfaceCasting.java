@@ -11,6 +11,14 @@ public class Ex08InterfaceCasting {
     IGround[] iGrounds = {new Dog(), new Cat(), new Chicken()};
     Object obj = 10;
     Utils.typeOf(obj);
+    Boolean b = false;
+    Character c = 'A';
+    Byte b1 = 0;
+    Short s = 10;
+    Integer i = 100;
+    Long l = 10L;
+    Float f1 = 0.0f;
+    Double d1 = 1.1;
   }
 }
 
