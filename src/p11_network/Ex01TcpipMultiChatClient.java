@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.DataInput;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -14,7 +13,6 @@ public class Ex01TcpipMultiChatClient extends JFrame {
   public static void main(String[] args) {
     new Ex01TcpipMultiChatClient();
   }
-
   private JTextArea ta;
   private JScrollPane scp;
   private JTextField tf;
@@ -22,17 +20,14 @@ public class Ex01TcpipMultiChatClient extends JFrame {
   private DataOutputStream out;
 
   public Ex01TcpipMultiChatClient() throws HeadlessException {
-    init();
-    arrange();
-    inflate();
+    init(); arrange(); inflate();
   }
 
   private void init() {
     nickname = JOptionPane.showInputDialog("Input Nickname");
     String ip = JOptionPane.showInputDialog("Server IP", "10.100.204.26");
 
-    ta = new JTextArea();
-    ta.setEditable(false);
+    ta = new JTextArea();ta.setEditable(false);
     scp = new JScrollPane(ta);
     tf = new JTextField();
     ta.setFont(new Font("맑은 고딕", Font.PLAIN, 20));
@@ -42,8 +37,7 @@ public class Ex01TcpipMultiChatClient extends JFrame {
       out = new DataOutputStream(socket.getOutputStream());
       out.writeUTF(nickname);
       new Thread(new Receiver(socket)).start(); // implements Runnable
-      //new Receiver().start(); // extends Thread
-
+//      new Receiver().start(); // extends Thread
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
@@ -73,7 +67,7 @@ public class Ex01TcpipMultiChatClient extends JFrame {
   }
 
   class Receiver implements Runnable {
-  //class Receiver extends Thread {
+    //  class Receiver extends Thread {
     DataInputStream in;
 
     public Receiver(Socket socket) {
@@ -88,8 +82,6 @@ public class Ex01TcpipMultiChatClient extends JFrame {
     public void run() {
       while (in != null) {
         try {
-          //입력후 글자 지워짐
-          //외부메세지를 Textarea에 보이게 하기
           System.out.println(in.readUTF());
         } catch (IOException e) {
           throw new RuntimeException(e);
@@ -98,4 +90,3 @@ public class Ex01TcpipMultiChatClient extends JFrame {
     }
   }
 }
-
