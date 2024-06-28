@@ -82,7 +82,10 @@ public class Ex01TcpipMultiChatClient extends JFrame {
     public void run() {
       while (in != null) {
         try {
+          String msg = in.readUTF();
           System.out.println(in.readUTF());
+          ta.setText(nickname + ":" + in.readUTF());
+
         } catch (IOException e) {
           throw new RuntimeException(e);
         }
