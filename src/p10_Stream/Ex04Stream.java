@@ -1,6 +1,8 @@
 package p10_Stream;
 
 import java.util.Comparator;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -13,7 +15,7 @@ public class Ex04Stream {
 
     // Stream을 통하여 데이터를 모은다.
     Stream<Student> stream = Stream.of(
-        new Student("김자바", 3, 200),
+        new Student("김자바", 3, 300),
         new Student("이자바", 3, 200),
         new Student("박자바", 2, 200),
         new Student("정자바", 2, 200),
@@ -21,7 +23,7 @@ public class Ex04Stream {
         new Student("성자바", 1, 200),
         new Student("안자바", 3, 200),
         new Student("전자바", 1, 200),
-        new Student("홍자바", 2, 200)
+        new Student("홍자바", 2, 100)
     );
     // stream을 정렬하는 메서드를 적용하고 비교하는 객체를 Comparator.comparing
     stream.sorted(Comparator.comparing(new Function<Student, Integer>() {
@@ -36,19 +38,57 @@ public class Ex04Stream {
         System.out.println(student); //정렬후 각각에 대하여 출력한다.
       }
     });
+    // 함수형 인터페이스 (Fuction)에 매개변수를 2개받기 위해 만든 함수.
+    stream = Stream.of(
+        new Student("김자바", 3, 300),
+        new Student("이자바", 3, 200),
+        new Student("박자바", 2, 200),
+        new Student("정자바", 2, 200),
+        new Student("최자바", 1, 200),
+        new Student("성자바", 1, 200),
+        new Student("안자바", 3, 200),
+        new Student("전자바", 1, 200),
+        new Student("홍자바", 2, 100)
+    );
+    Optional<Student> student = stream.reduce(new BinaryOperator<Student>() {
+      @Override
+      public Student apply(Student s1, Student s2) {
+        return s1.totalScore > s2.totalScore ? s1 : s2;
+      }
+    });
+    if (student.isPresent()) System.out.println(student);
   }
 }
 
 class Student implements Comparable<Student> {
-  String name; int ban;int totalScore;
+  String name;
+  int ban;
+  int totalScore;
+
   public Student(String name, int ban, int totalScore) {
-    this.name = name;this.ban = ban;this.totalScore = totalScore;
+    this.name = name;
+    this.ban = ban;
+    this.totalScore = totalScore;
   }
+
   @Override
-  public int compareTo(Student s) {return -1*(totalScore-s.totalScore);  }
-  public String toString(){
-    return String.format("[%s, %d, %d]", name,ban,totalScore);}
-  public String getName() {return name;}
-  public int getBan() {return ban;}
-  public int getTotalScore() {return totalScore;}
+  public int compareTo(Student s) {
+    return -1 * (totalScore - s.totalScore);
+  }
+
+  public String toString() {
+    return String.format("[%s, %d, %d]", name, ban, totalScore);
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public int getBan() {
+    return ban;
+  }
+
+  public int getTotalScore() {
+    return totalScore;
+  }
 }
