@@ -15,7 +15,9 @@ public class Ex03StreamMidOperator {
     String dir = "C:\\workspace\\spaceJava\\20240611_java";
     try {
       Stream<Path> fileListStream = Files.list(Paths.get(dir));
-      fileListStream.map(new Function<Path, File>() {
+      fileListStream
+          // n개의 매개변수가 들어오면 n개의 각각에 대하여 처리된 리턴타입을 정의
+          .map(new Function<Path, File>() {
             @Override
             public File apply(Path path) {
               return path.toFile();
@@ -27,10 +29,11 @@ public class Ex03StreamMidOperator {
 //              System.out.println(f.toString() + ",");
 //            }
 //          })
-          .filter(new Predicate<Object>() {
+
+          // n개의 매개변수가 들어와서 필터를 거쳐 m개를 리턴함
+          .filter(new Predicate<File>() {
             @Override
-            public boolean test(Object o) {
-              File file = (File) o;
+            public boolean test(File file) {
               return file.isFile();
             }
           })
@@ -46,7 +49,8 @@ public class Ex03StreamMidOperator {
               return s.toUpperCase();
             }
           })
-          .distinct()
+          .distinct() // 중복을 제거해줌
+          // 각각의 원소에 대해서 적용 입력은 있지만, 출력은 없다.
           .forEach(new Consumer<String>() {
             @Override
             public void accept(String s) {
