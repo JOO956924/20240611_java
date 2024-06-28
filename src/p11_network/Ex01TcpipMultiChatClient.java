@@ -88,6 +88,8 @@ public class Ex01TcpipMultiChatClient extends JFrame {
     public void run() {
       while (in != null) {
         try {
+          //입력후 글자 지워짐
+          //외부메세지를 Textarea에 보이게 하기
           System.out.println(in.readUTF());
         } catch (IOException e) {
           throw new RuntimeException(e);
