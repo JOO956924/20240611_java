@@ -31,6 +31,8 @@ public class Ex03Arrays {
     System.out.println(list);
 
     //list를 배열로
+    //Integer[] arrInt2 = list.toArray(new Integer[list.size()]);
+    //리스트를 배열로 변환하기 위해 배열을 단순히 참조. 그래서 0
     Integer[] arrInt2 = list.toArray(new Integer[0]);
     Integer[] arrInt3 =
         list.stream().toArray(value -> new Integer[value]);
