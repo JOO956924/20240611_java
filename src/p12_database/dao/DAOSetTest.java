@@ -1,4 +1,4 @@
-package p12_database;
+package p12_database.dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;

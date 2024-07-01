@@ -1,4 +1,4 @@
-package p12_database;
+package p12_database.dao;
 
 import java.sql.*;
 
@@ -27,3 +27,4 @@ public class DAOSet {
     }
   }
 }
+
