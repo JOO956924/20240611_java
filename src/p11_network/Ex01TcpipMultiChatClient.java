@@ -46,6 +46,7 @@ public class Ex01TcpipMultiChatClient extends JFrame {
       public void actionPerformed(ActionEvent e) {
         try {
           out.writeUTF(nickname + ":" + tf.getText());
+          tf.setText("");
         } catch (IOException ex) {
           throw new RuntimeException(ex);
         }
@@ -84,7 +85,7 @@ public class Ex01TcpipMultiChatClient extends JFrame {
         try {
           String msg = in.readUTF();
           System.out.println(in.readUTF());
-          ta.setText(nickname + ":" + in.readUTF());
+          ta.setText(ta.getText() + msg + "\n");
 
         } catch (IOException e) {
           throw new RuntimeException(e);
