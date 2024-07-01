@@ -3,10 +3,10 @@ package p12_database.dao;
 import java.sql.*;
 
 public class DAOSet {
-  private Connection conn;
-  private PreparedStatement pstmt;
-  private Statement stmt;
-  private ResultSet rs;
+  protected Connection conn;
+  protected PreparedStatement pstmt;
+  protected Statement stmt;
+  protected ResultSet rs;
 
   public Connection connectDB() throws SQLException {
     //String driver = "jdbc:mariadb://127.0.0.1:3306/db7"; // maria db
@@ -26,5 +26,8 @@ public class DAOSet {
       throw new RuntimeException(e);
     }
   }
+  /*
+  create table members(mno number, id VARCHAR2(20), pass VARCHAR2(20), name VARCHAR2(20), mobile VARCHAR2(20));
+  */
 }
 
