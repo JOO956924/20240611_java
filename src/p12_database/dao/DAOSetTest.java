@@ -11,9 +11,9 @@ public class DAOSetTest {
       Connection conn = daoSet.connectDB();
       System.out.println(conn.isClosed()?"접속종료":"접속중");
     } catch (ClassNotFoundException e) {
-      System.out.println("드라이버로딩 오류:" + e.getMessage());
+      System.out.println("드라이버로딩 오류: "+e.getMessage());
     } catch (SQLException e) {
-      System.out.println("접속 오류:" + e.getMessage());
+      System.out.println("접속 오류: "+e.getMessage());
     } finally {
       daoSet.closeDB();
     }

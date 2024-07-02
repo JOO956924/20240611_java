@@ -9,8 +9,8 @@ public class DAOSet {
   protected ResultSet rs;
 
   public Connection connectDB() throws SQLException {
-    //String driver = "jdbc:mariadb://127.0.0.1:3306/db7"; // maria db
-    String driver = "jdbc:oracle:thin:@localhost:1521:xe";
+    //String driver ="jdbc:mariadb://127.0.0.1:3306/db7"; //maria db
+    String driver = "jdbc:oracle:thin:@localhost:1521:xe"; //oracle
     String user = "db7", pass = "1234";
     conn = DriverManager.getConnection(driver, user, pass);
     return conn;
@@ -27,11 +27,11 @@ public class DAOSet {
     }
   }
   /*
-  create table members(mno number, id VARCHAR2(20), pass VARCHAR2(20), name VARCHAR2(20), mobile VARCHAR2(20));
+    create table members(
+    mno number, id varchar2(20),
+    pass varchar2(20),name varchar2(20),
+    mobile varchar2(20));
 
-  create SEQUENCE sq_members;
-
-  grant unlimited tablespace to db7;
+    create sequence sq_members;
   */
 }
-
