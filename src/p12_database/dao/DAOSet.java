@@ -28,6 +28,10 @@ public class DAOSet {
   }
   /*
   create table members(mno number, id VARCHAR2(20), pass VARCHAR2(20), name VARCHAR2(20), mobile VARCHAR2(20));
+
+  create SEQUENCE sq_members;
+
+  grant unlimited tablespace to db7;
   */
 }
 

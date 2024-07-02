@@ -1,5 +1,8 @@
 package p12_database.ui;
 
+import p12_database.dao.MembersDAO;
+import p12_database.vo.Members;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -30,8 +33,14 @@ public class FrmLogin extends FrmBasic{
     btnJoin = new JButton("Join");
     btnClose = new JButton("Close");
 
-    tfId.addActionListener(e -> pfPass.requestFocus());
-    pfPass.addActionListener(e -> loginAccess(tfId.getText(),new String(pfPass.getPassword())));
+    tfId.addActionListener(e -> {
+      if (!isEmptyId()) pfPass.requestFocus();
+    });
+    pfPass.addActionListener(e -> {
+      if (!isEmptyId() && !isEmptyPass()) {
+        loginAccess(tfId.getText(), new String(pfPass.getPassword()));
+      }
+    });
     btnLogin.addActionListener(e -> loginAccess(tfId.getText(),new String(pfPass.getPassword())));
     btnJoin.addActionListener(e -> {
       new FrmJoin("회원가입",500,500);
@@ -47,7 +56,22 @@ public class FrmLogin extends FrmBasic{
   }
 
   private void loginAccess(String id, String pass) {
-    System.out.println("login");
+    Members members = new MembersDAO().loginCheck(id,pass);
+    if (members == null) {
+      JOptionPane.showMessageDialog(this,"없는 Id입니다.");
+    } else {
+      new FrmMain("회원정보관리 "+members.getName()+"님 환영합니다.",600,600);
+      dispose();
+    }
+  }
+  //유효성 검사 (Validation Check)
+  private boolean isEmptyId () { // 비어 있지 않으면 false
+    if (!tfId.getText().toString().trim().equals("")) return false;
+    return true; // 비어 있을 경우
+  }
+  private boolean isEmptyPass () { // 비어 있지 않으면 false
+    if (!new String(pfPass.getPassword()).toString().trim().equals("")) return false;
+    return true; // 비어 있을 경우
   }
 
   @Override

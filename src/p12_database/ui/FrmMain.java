@@ -1,7 +1,7 @@
 package p12_database.ui;
 
-public class FrmJoin extends FrmBasic {
-  public FrmJoin(String title, int width, int height) {
+public class FrmMain extends FrmBasic{
+  public FrmMain(String title, int width, int height) {
     super(title, width, height);
   }
 
