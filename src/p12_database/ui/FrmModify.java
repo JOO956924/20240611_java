@@ -5,21 +5,22 @@ import p12_database.vo.Members;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
-public class FrmJoin extends FrmBasic {
+public class FrmModify extends JDialog {
   private JLabel lbJoin, lbName, lbId, lbPass, lbMobile;
   private JTextField tfName, tfId, tfMobile;
   private JPasswordField pfPass;
   private JButton btnJoin, btnClose;
   private JPanel pnlCenter, pnlSouth;
+  private Members members;
 
-  public FrmJoin(String title, int width, int height) {
-    super(title, width, height);
+  public FrmModify(JFrame jFrame, Members members, boolean modal) {
+    super(jFrame ,"회원 수정", true);
+    this.members = members;
+    init();arrange();inflate();
   }
 
-  @Override
+
   public void init() {
     lbJoin = new JLabel("Join");
     lbJoin.setFont(new Font("맑은 고딕", Font.BOLD | Font.CENTER_BASELINE, 30));
@@ -132,7 +133,7 @@ public class FrmJoin extends FrmBasic {
     return true;
   }
 
-  @Override
+
   public void arrange() {
     add(lbJoin, "North");
     pnlCenter.add(lbName);
@@ -148,5 +149,11 @@ public class FrmJoin extends FrmBasic {
     pnlSouth.add(btnClose);
     add(pnlSouth, "South");
 
+  }
+  public void inflate() {
+    setSize(250,250);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setLocationRelativeTo(this);
+    setVisible(true);
   }
 }

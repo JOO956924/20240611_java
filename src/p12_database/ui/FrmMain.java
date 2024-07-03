@@ -49,8 +49,15 @@ public class FrmMain extends FrmBasic {
         JOptionPane.showMessageDialog(null, "회원을 먼저 선택하세요");
         return;
       }
-      JOptionPane.showMessageDialog(null, tableModel.getValueAt(row, 0));
+      int mno = (int) tableModel.getValueAt(row, 0);
+      String name = (String) tableModel.getValueAt(row,1);
+      String id = (String) tableModel.getValueAt(row,2);
+      String pass = (String) tableModel.getValueAt(row,3);
+      String mobile = (String) tableModel.getValueAt(row,4);
+      //JOptionPane.showMessageDialog(null, mno);
       // 회원을 수정하는 코드를 작성하여 추가하고 수정되었으면 JTable도 새로고침 되도록 한다.
+      //new FrmModify(this , mno,true);
+      new FrmModify(this,new Members(mno,id,pass,name,mobile), true);
     });
     btnDelete = new JButton("삭제");
     btnDelete.addActionListener(e -> {
