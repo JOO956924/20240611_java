@@ -30,7 +30,7 @@ public class MembersDAO extends DAOSet {
     boolean result = false;
     try {
       conn = connectDB();
-      String sql = "insert into members(mno,id, pass, name, mobile) \n" + "VALUES(sq_members.nextval, ?, ?, ?, ?); ";
+      String sql = "insert into members(mno,id, pass, name, mobile) \n" + "VALUES(sq_members.nextval, ?, ?, ?, ?) ";
       pstmt = conn.prepareStatement(sql);
       pstmt.setString(1, members.getId());
       pstmt.setString(2, members.getPass());
